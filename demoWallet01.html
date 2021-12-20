@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="script-min.js"></script>
+    </head>
+    <body></body>
+    <script>
+        //////////////////////////////////////////////////////////////////
+        // 
+        // Found a bug? Write me at: cryptosqwid@gmail.com
+        //
+        // If you like it, buy me a beer!!!
+        //
+        // Send a tip to 0x7F82cecDeC38701729dEc9C62AE30897B55e0e50
+        //
+        // Thank you!
+        //
+        //////////////////////////////////////////////////////////////////
+
+        // Fresh start with a deposit of 35 DRIPS
+            w = new DripWallet({
+                deposits : 35,
+                name: 'myWallet',
+                fee: 0.5,           // Average € cost of fees.
+                dripValue: 50.51,   // Average € value of DRIP
+            });
+
+        ///////////////////////////////////////////
+        // Simulator
+        ///////////////////////////////////////////
+
+        // Compound every 24h for 30 days
+            w.repeatHydrate({numDays:30});
+        
+        // Then...
+        // Claim every 24h for 7 days
+            w.repeatClaim({numDays:7,label:'Get the money'});
+        
+        // Then...
+        // sell balance into wallet 
+            w.sell({label:'Cash! €€€'});
+        
+        // Then...
+        // Hydrate 6 days and claim 1 day, then sell -> for 4 weeks
+            w.repeatHydrate({numDays:6});
+            w.claim({printLine:true,label:'Get The money'});
+            w.sell({label:'Cash! €€€'});
+
+            w.repeatHydrate({numDays:6});
+            w.claim({printLine:true,label:'Get The money'});
+            w.sell({label:'Cash! €€€'});
+
+            w.repeatHydrate({numDays:6});
+            w.claim({printLine:true,label:'Get The money'});
+            w.sell({label:'Cash! €€€'});
+
+            w.repeatHydrate({numDays:6});
+            w.claim({printLine:true,label:'Get The money'});
+            w.sell({label:'Cash! €€€'});
+
+        // Then...
+        // Let the reward grow for 6 days then claim on the seventh.
+            w.repeatGrowPayout({numDays:6});
+            w.claim({printLine:true,label:'Get The money'});
+
+
+ 
+    </script>
+</html>
